@@ -1,5 +1,6 @@
 import express from "express";
 import getRandom from "getrandomjs";
+import cors from 'cors'
 //array that shows what score that each letter contain
 let people = [
   { letter: "a", score: 20 },
@@ -57,7 +58,9 @@ let people = [
 const port = process.env.PORT || 3001;
 
 const app = express();
-
+app.use(cors({
+  origin: '*'
+}));
 app.get("/Letter/:Name/", (req, res) => {
   //user are required to put in two names that are connect by '+'
   let names = req.params.Name.split("+");
