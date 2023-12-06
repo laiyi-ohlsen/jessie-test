@@ -81,10 +81,12 @@ app.get("/Letter/:Name/", (req, res) => {
   const thePercentageOfFallInLove = getRandom();
 // print the different values, 
 //basic response to the user values
-//   res.send({ names: names, matchingScore: matchingScore, thePercentageOfFallInLove: thePercentageOfFallInLove });
-// });
+   res.send({ names: names, 
+    matchingScore: matchingScore, 
+    thePercentageOfFallInLove: thePercentageOfFallInLove });
+ });
 //doing a basic html layout for displaying 
-res.send(`
+/*res.send(`
 <html>
   <head>
     <title>Love Calculator</title>
@@ -107,8 +109,8 @@ res.send(`
     <p>Chance of Falling in Love Today: ${thePercentageOfFallInLove}%</p>
   </body>
 </html>
-`);
-});
+`);*/
+
 
 app.listen(port, () => {
   console.log(`It is working  ${port}`);
